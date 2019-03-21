@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="惶惶不可终日地思考">
-<meta property="og:url" content="http://ununie.github.io/index.html">
+<meta name="description" content="1、方法方法重载： 同一个类中允许一个以上的同名方法，只要他们的参数个数或参数类型不同即可。 方法重载与返回值无关，只看方法名和参数列表。调用时虚拟机通过参数雷暴来区分不同的方法 2、数组数组定义格式： 数据类型[] 数组名，int[] a; 数据类型 数组名[],int a[]; 数组的初始化： 动态初始化：初始化时只指定数组长度，由系统分配初始值 静态初始化：初始化时指定每个元素的初始化值，由">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础02">
+<meta property="og:url" content="http://ununie.github.io/2019/03/21/java基础02/index.html">
 <meta property="og:site_name" content="惶惶不可终日地思考">
+<meta property="og:description" content="1、方法方法重载： 同一个类中允许一个以上的同名方法，只要他们的参数个数或参数类型不同即可。 方法重载与返回值无关，只看方法名和参数列表。调用时虚拟机通过参数雷暴来区分不同的方法 2、数组数组定义格式： 数据类型[] 数组名，int[] a; 数据类型 数组名[],int a[]; 数组的初始化： 动态初始化：初始化时只指定数组长度，由系统分配初始值 静态初始化：初始化时指定每个元素的初始化值，由">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-21T12:54:14.659Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="惶惶不可终日地思考">
+<meta name="twitter:title" content="java基础02">
+<meta name="twitter:description" content="1、方法方法重载： 同一个类中允许一个以上的同名方法，只要他们的参数个数或参数类型不同即可。 方法重载与返回值无关，只看方法名和参数列表。调用时虚拟机通过参数雷暴来区分不同的方法 2、数组数组定义格式： 数据类型[] 数组名，int[] a; 数据类型 数组名[],int a[]; 数组的初始化： 动态初始化：初始化时只指定数组长度，由系统分配初始值 静态初始化：初始化时指定每个元素的初始化值，由">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://ununie.github.io/">
+  <link rel="canonical" href="http://ununie.github.io/2019/03/21/java基础02/">
 
 
 
 
 
-  <title>惶惶不可终日地思考</title>
+  <title>java基础02 | 惶惶不可终日地思考</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,131 +258,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ununie.github.io/2019/03/21/java基础03/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ununie">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="惶惶不可终日地思考">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/java基础03/" itemprop="url">java基础03</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-21T21:05:13+08:00">
-                2019-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1、Object类"><a href="#1、Object类" class="headerlink" title="1、Object类"></a>1、Object类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Object类的方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span></span>;<span class="comment">//返回该对象的哈希码值,对象不同一般返回值也不同。会把对象的内部地址值转化为一个整数。</span></span><br><span class="line"><span class="comment">//哈希值是根据哈希算法计算出来的一个值，跟地址值有关但是不是实际地址值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> Class&lt;?&gt; getClass();<span class="comment">//可以理解为返回某个类的字节码文件对象</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span>;<span class="comment">//一般都要重写toString()方法，相当于把该类的所有成员变量值组成并返回即可。默认等于this.getClass().getName()+"@"+Integer.toHexString(this.hashCode)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">==	比较基本类型比较的是基本类型的值，比较引用类型比较的是地址值是否相同</span></span><br><span class="line"><span class="comment">equals()方法默认是用"=="进行比较，也就是默认使用地址值比较</span></span><br><span class="line"><span class="comment">一般重写比较对象成员变量值是否相同</span></span><br><span class="line"><span class="comment">String重写了equals方法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">this</span>==o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(o==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.getClass()!=o.getClass()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    <span class="comment">//if((o instanceof Student)) return false;</span></span><br><span class="line">    Student s = (Student) s;</span><br><span class="line">    <span class="comment">//比较内容</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当垃圾回收器确定不存在对该对象的更多引用时，由对象的垃圾回收器调用此方法。用于垃圾回收，但是什么时候回收不确定。</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">finalize</span><span class="params">()</span></span>;   </span><br><span class="line"></span><br><span class="line"><span class="comment">//如果需要重写clone方法，需要实现Cloneable接口，这个接口没有方法，叫做标记接口</span></span><br><span class="line"><span class="function"><span class="keyword">protected</span> Object <span class="title">clone</span><span class="params">()</span></span>;</span><br><span class="line"><span class="comment">//colone是克隆之后，如果原来的发生改变克隆对象不会改变</span></span><br></pre></td></tr></table></figure>
-<h2 id="2、Scanner"><a href="#2、Scanner" class="headerlink" title="2、Scanner"></a>2、Scanner</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Scanner类，是InputStream的包装类型</span></span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"><span class="comment">//调用的是Scanner(InputStream in)的构造方法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法</span></span><br><span class="line">hasNextXXX()</span><br><span class="line">nextXXX()</span><br></pre></td></tr></table></figure>
-<p>在使用Scanner先获取一个数值，再获取一个字符串会出现问题。会把换行符\r\n给字符串。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -408,9 +290,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/21/java基础02/" itemprop="url">java基础02</a></h1>
+          <h1 class="post-title" itemprop="name headline">java基础02</h1>
         
 
         <div class="post-meta">
@@ -460,9 +340,7 @@
       
 
       
-        
-          
-            <h2 id="1、方法"><a href="#1、方法" class="headerlink" title="1、方法"></a>1、方法</h2><p>方法重载：</p>
+        <h2 id="1、方法"><a href="#1、方法" class="headerlink" title="1、方法"></a>1、方法</h2><p>方法重载：</p>
 <p>同一个类中允许一个以上的同名方法，只要他们的参数个数或参数类型不同即可。</p>
 <p>方法重载与返回值无关，只看方法名和参数列表。调用时虚拟机通过参数雷暴来区分不同的方法</p>
 <h2 id="2、数组"><a href="#2、数组" class="headerlink" title="2、数组"></a>2、数组</h2><p>数组定义格式：</p>
@@ -722,8 +600,6 @@
 <p>​    重写方法；</p>
 <p>}</p>
 
-          
-        
       
     </div>
     
@@ -733,468 +609,74 @@
     
 
     
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="ununie 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="ununie 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
 
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ununie.github.io/2019/03/17/java基础01/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ununie">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="惶惶不可终日地思考">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/17/java基础01/" itemprop="url">java基础01</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-17T22:55:55+08:00">
-                2019-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1、jvm、jre、jdk"><a href="#1、jvm、jre、jdk" class="headerlink" title="1、jvm、jre、jdk"></a>1、jvm、jre、jdk</h2><p>jvm：java虚拟机</p>
-<p>jre：java运行环境，包含了java虚拟机和java程序所需要的核心类库。如果运行一个java程序，只需要jre即可</p>
-<p>jdk：java开发工具包，包含了jre、编译工具javac.exe、打包工具jar.exe</p>
-<h2 id="2、jdk下载安装"><a href="#2、jdk下载安装" class="headerlink" title="2、jdk下载安装"></a>2、jdk下载安装</h2><p>配置环境变量，JAVA_HOME</p>
-<h2 id="3、java语法"><a href="#3、java语法" class="headerlink" title="3、java语法"></a>3、java语法</h2><h3 id="1、关键字"><a href="#1、关键字" class="headerlink" title="1、关键字"></a>1、关键字</h3><ul>
-<li>goto和const作为保留字</li>
-<li>关键字都是小写</li>
-</ul>
-<h3 id="2、标识符"><a href="#2、标识符" class="headerlink" title="2、标识符"></a>2、标识符</h3><ul>
-<li><p>给类、接口、方法、变量等命名时使用的字符序列。</p>
-</li>
-<li><p>不能以数字开头</p>
-</li>
-<li>不能是关键字</li>
-</ul>
-<h3 id="3、注释"><a href="#3、注释" class="headerlink" title="3、注释"></a>3、注释</h3><ul>
-<li>单行注释//注释内容</li>
-<li>多行注释/<em> 注释内容 </em>/</li>
-<li>文档注释/<strong> 注释内容 </strong>/</li>
-</ul>
-<p>作用：提高阅读性，注释掉内容帮助调试</p>
-<h3 id="4、常量"><a href="#4、常量" class="headerlink" title="4、常量"></a>4、常量</h3><ul>
-<li>字面值常量：字符串、整数、小数、字符常量、布尔常量、null</li>
-<li>自定义常量</li>
-</ul>
-<h4 id="1、进制"><a href="#1、进制" class="headerlink" title="1、进制"></a>1、进制</h4><ul>
-<li>整数常量的四种表现形式：<ul>
-<li>二进制：以0b开头</li>
-<li>八进制：以0开头</li>
-<li>十进制：默认</li>
-<li>十六进制：以0x开头，0-9以及a-f（大小写均可）</li>
-<li><strong>进制之间转换</strong>：十进制到其它n进制，用数字除以n，余数倒序</li>
-</ul>
-</li>
-</ul>
-<p>一个字节（byte）等于8位（bit）</p>
-<p>1K=1024byte</p>
-<p>1M=1024K</p>
-<h4 id="2、原码、反码、补码"><a href="#2、原码、反码、补码" class="headerlink" title="2、原码、反码、补码"></a>2、原码、反码、补码</h4><p>所有数据运算都是用补码进行的</p>
-<p>原码：就是二进制表示法，最左边为0表示整数，1表示负数正数</p>
-<p>反码：正数反码与原码相同；负数反码是原码逐位取反符号位除外</p>
-<p>补码：正数补码与原码相同；负数补码是反码末位加1</p>
-<h3 id="5、变量"><a href="#5、变量" class="headerlink" title="5、变量"></a>5、变量</h3><p>数据类型    变量名=变量值</p>
-<h3 id="6、数据类型"><a href="#6、数据类型" class="headerlink" title="6、数据类型"></a>6、数据类型</h3><p>基本数据类型：整型、浮点型、字符型、布尔型</p>
-<p>引用数据类型：类、接口、数组</p>
-<h4 id="1、基本类型"><a href="#1、基本类型" class="headerlink" title="1、基本类型"></a>1、基本类型</h4><table>
-<thead>
-<tr>
-<th>整型</th>
-<th>占用字节个数</th>
-<th>范围</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>byte</td>
-<td>1</td>
-<td>-128-127</td>
-</tr>
-<tr>
-<td>short</td>
-<td>2</td>
-<td>-2^15-2^15-1</td>
-</tr>
-<tr>
-<td>int</td>
-<td>4</td>
-<td>-2^31-2^31-1</td>
-</tr>
-<tr>
-<td>long</td>
-<td>8</td>
-<td>-2^53-2^53-1</td>
-</tr>
-<tr>
-<td>浮点型</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>float</td>
-<td>4</td>
-<td>-3.403e38-3.403e38</td>
-</tr>
-<tr>
-<td>double默认</td>
-<td>8</td>
-<td>-1.798e308-1.798e308</td>
-</tr>
-<tr>
-<td>字符型</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>char</td>
-<td>2</td>
-<td></td>
-</tr>
-<tr>
-<td>布尔型</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>boolean</td>
-<td>1</td>
-<td>默认false</td>
-</tr>
-</tbody>
-</table>
-<p>长整型long后缀用L标记</p>
-<p>单精度浮点型float后缀用F标记</p>
-<h4 id="2、使用变量注意事项"><a href="#2、使用变量注意事项" class="headerlink" title="2、使用变量注意事项"></a>2、使用变量注意事项</h4><p>变量的作用域，变量所定义在的大括号内</p>
-<p>相同作用域不能定义同名变量</p>
-<p>没有初始化的变量不能直接使用</p>
-<p>默认转换：</p>
-<p>byte、short、char——int——long——float——double</p>
-<p>byte、shrot、char相互之间不转换，他们参与运算都转为int进行运算。即便是两个byte之间进行运算也是先转int</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">3</span>,b2=<span class="number">4</span>,b3,b4;</span><br><span class="line">b3=b1+b2;<span class="comment">//这里会有类型提示问题，报错。因为是变量相加</span></span><br><span class="line">b4=<span class="number">3</span>+<span class="number">4</span>;<span class="comment">//常量会先把结果计算出来，如果在byte范围内，赋值给byte类型则不报错。</span></span><br></pre></td></tr></table></figure>
-<p>强制转换</p>
-<p>long转到float为什么可以？</p>
-<p>整型和浮点型底层存储结构不同；float表示的数据范围比long的范围大</p>
-<p>java中的char类型可以存一个中文汉字吗？</p>
-<p>可以，java中的char类型占用2个字节。汉字一般占两个字节。java采用的是unicode编码</p>
-<h3 id="7、运算符"><a href="#7、运算符" class="headerlink" title="7、运算符"></a>7、运算符</h3><p>算术运算符、赋值运算符、比较运算符、逻辑运算符、位运算符、三目运算符</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s1=<span class="number">1</span>,s2=<span class="number">1</span>;</span><br><span class="line">s1=s1+<span class="number">1</span>;<span class="comment">//这里会报错</span></span><br><span class="line">s2+=<span class="number">1</span>;<span class="comment">//这里不报错，想当于s2=(shrot)(s2+1);</span></span><br></pre></td></tr></table></figure>
-<p>位运算符</p>
-<table>
-<thead>
-<tr>
-<th>运算符</th>
-<th></th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&lt;&lt;</td>
-<td>左移</td>
-<td>1001&lt;&lt;  10010</td>
-</tr>
-<tr>
-<td>&gt;&gt;</td>
-<td>右移</td>
-<td>1001&gt;&gt;  1100</td>
-</tr>
-<tr>
-<td>&gt;&gt;&gt;</td>
-<td>无符号右移</td>
-<td>1001&gt;&gt;  0100</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>与运算</td>
-<td>有0则0</td>
-</tr>
-<tr>
-<td>\</td>
-<td></td>
-<td>或运算</td>
-<td>有1则1</td>
-</tr>
-<tr>
-<td>^</td>
-<td>异或</td>
-<td>相同则0，不同则1</td>
-</tr>
-<tr>
-<td>~</td>
-<td>取反</td>
-<td>按位取反</td>
-</tr>
-</tbody>
-</table>
-<p>a^b^b结果为a，可以用作简单的数据加密</p>
-<p>m&lt;&lt;n = m*2^n</p>
-<p>m&gt;&gt;n = m/2^n</p>
-<p>加法操作a+b相当于a^b + (a&amp;b)&lt;&lt;1 递归调用直到a&amp;b=0</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取键盘录入数据</span></span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">sc.nextInt();</span><br></pre></td></tr></table></figure>
-<h3 id="8、流程控制语句"><a href="#8、流程控制语句" class="headerlink" title="8、流程控制语句"></a>8、流程控制语句</h3><p>顺序语句、条件语句、循环语句</p>
-<p>switch语句的取值byte、int、short、char。JDK5以后可以是枚举，JDK7以后可以是字符串</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ununie.github.io/2019/02/25/个人博客的由来/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ununie">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/uploads/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="惶惶不可终日地思考">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/25/个人博客的由来/" itemprop="url">个人博客的由来</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-25T21:39:03+08:00">
-                2019-02-25
-              </time>
+              <a href="/2019/03/17/java基础01/" rel="next" title="java基础01">
+                <i class="fa fa-chevron-left"></i> java基础01
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2019/03/21/java基础03/" rel="prev" title="java基础03">
+                java基础03 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/一些记录/" itemprop="url" rel="index">
-                    <span itemprop="name">一些记录</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>以前也在网上写东西,用过csdn、简书、微信公众号等。后来在java交流群中看到了有朋友使用Hexo搭建的个人博客，风格非常漂亮又有很多自定义功能，所以打算尝试一下于是就有了这个博客。</p>
-<p>搭建过程参照知乎的一篇专栏：</p>
-<blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/26625249" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/26625249</a></p>
-</blockquote>
-<p>​    过程中也会遇到一些坑，多数是因为对git、nodejs、npm不够熟悉。等踩过了坑在浏览器中输入自己的网址访问到主页时还是非常开心的。整个搭建过程用了昨天一个晚上，今天晚上配置了一些内容，使用了<a href="http://theme-next.iissnan.com/" target="_blank" rel="noopener"><strong>next</strong></a>主题美化了页面，用了<a href="http://www.tietuku.com/" target="_blank" rel="noopener"><strong>贴图库</strong></a>作为博客文章的图床，自定义了头像，网页图标favicon，还把支付宝微信收钱码贴了上去（不要脸笑）。</p>
-<p>​    总之，我的个人博客算是上线了。以后会在这里记录一些感悟、知识或者是一些有意思的东西.诸位,一起加油吧…</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1204,10 +686,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -1215,6 +698,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1235,8 +722,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1308,6 +804,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、方法"><span class="nav-number">1.</span> <span class="nav-text">1、方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、数组"><span class="nav-number">2.</span> <span class="nav-text">2、数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、面向对象"><span class="nav-number">3.</span> <span class="nav-text">3、面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、类与对象"><span class="nav-number">3.1.</span> <span class="nav-text">1、类与对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、局部变量和成员变量的区别："><span class="nav-number">3.1.1.</span> <span class="nav-text">1、局部变量和成员变量的区别：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、匿名对象"><span class="nav-number">3.1.2.</span> <span class="nav-text">2、匿名对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、封装"><span class="nav-number">3.2.</span> <span class="nav-text">2、封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、private关键字，this关键字"><span class="nav-number">3.3.</span> <span class="nav-text">3、private关键字，this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、构造方法"><span class="nav-number">3.4.</span> <span class="nav-text">4、构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、static关键字"><span class="nav-number">3.5.</span> <span class="nav-text">5、static关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、代码块"><span class="nav-number">3.6.</span> <span class="nav-text">6、代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、继承"><span class="nav-number">3.7.</span> <span class="nav-text">7、继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、final关键字"><span class="nav-number">3.8.</span> <span class="nav-text">8、final关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、多态"><span class="nav-number">3.9.</span> <span class="nav-text">9、多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10、抽象类"><span class="nav-number">3.10.</span> <span class="nav-text">10、抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11、接口"><span class="nav-number">3.11.</span> <span class="nav-text">11、接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12、修饰符"><span class="nav-number">3.12.</span> <span class="nav-text">12、修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13、内部类"><span class="nav-number">3.13.</span> <span class="nav-text">13、内部类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1441,6 +953,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

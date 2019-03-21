@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="惶惶不可终日地思考">
 <meta property="og:description" content="1、jvm、jre、jdkjvm：java虚拟机 jre：java运行环境，包含了java虚拟机和java程序所需要的核心类库。如果运行一个java程序，只需要jre即可 jdk：java开发工具包，包含了jre、编译工具javac.exe、打包工具jar.exe 2、jdk下载安装配置环境变量，JAVA_HOME 3、java语法1、关键字 goto和const作为保留字 关键字都是小写  2、">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-18T11:55:05.135Z">
+<meta property="og:updated_time" content="2019-03-18T14:18:42.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java基础01">
 <meta name="twitter:description" content="1、jvm、jre、jdkjvm：java虚拟机 jre：java运行环境，包含了java虚拟机和java程序所需要的核心类库。如果运行一个java程序，只需要jre即可 jdk：java开发工具包，包含了jre、编译工具javac.exe、打包工具jar.exe 2、jdk下载安装配置环境变量，JAVA_HOME 3、java语法1、关键字 goto和const作为保留字 关键字都是小写  2、">
@@ -461,6 +461,67 @@
 <p>byte、shrot、char相互之间不转换，他们参与运算都转为int进行运算。即便是两个byte之间进行运算也是先转int</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">3</span>,b2=<span class="number">4</span>,b3,b4;</span><br><span class="line">b3=b1+b2;<span class="comment">//这里会有类型提示问题，报错。因为是变量相加</span></span><br><span class="line">b4=<span class="number">3</span>+<span class="number">4</span>;<span class="comment">//常量会先把结果计算出来，如果在byte范围内，赋值给byte类型则不报错。</span></span><br></pre></td></tr></table></figure>
 <p>强制转换</p>
+<p>long转到float为什么可以？</p>
+<p>整型和浮点型底层存储结构不同；float表示的数据范围比long的范围大</p>
+<p>java中的char类型可以存一个中文汉字吗？</p>
+<p>可以，java中的char类型占用2个字节。汉字一般占两个字节。java采用的是unicode编码</p>
+<h3 id="7、运算符"><a href="#7、运算符" class="headerlink" title="7、运算符"></a>7、运算符</h3><p>算术运算符、赋值运算符、比较运算符、逻辑运算符、位运算符、三目运算符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s1=<span class="number">1</span>,s2=<span class="number">1</span>;</span><br><span class="line">s1=s1+<span class="number">1</span>;<span class="comment">//这里会报错</span></span><br><span class="line">s2+=<span class="number">1</span>;<span class="comment">//这里不报错，想当于s2=(shrot)(s2+1);</span></span><br></pre></td></tr></table></figure>
+<p>位运算符</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th></th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;&lt;</td>
+<td>左移</td>
+<td>1001&lt;&lt;  10010</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>右移</td>
+<td>1001&gt;&gt;  1100</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>无符号右移</td>
+<td>1001&gt;&gt;  0100</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>与运算</td>
+<td>有0则0</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>或运算</td>
+<td>有1则1</td>
+</tr>
+<tr>
+<td>^</td>
+<td>异或</td>
+<td>相同则0，不同则1</td>
+</tr>
+<tr>
+<td>~</td>
+<td>取反</td>
+<td>按位取反</td>
+</tr>
+</tbody>
+</table>
+<p>a^b^b结果为a，可以用作简单的数据加密</p>
+<p>m&lt;&lt;n = m*2^n</p>
+<p>m&gt;&gt;n = m/2^n</p>
+<p>加法操作a+b相当于a^b + (a&amp;b)&lt;&lt;1 递归调用直到a&amp;b=0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取键盘录入数据</span></span><br><span class="line">Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">sc.nextInt();</span><br></pre></td></tr></table></figure>
+<h3 id="8、流程控制语句"><a href="#8、流程控制语句" class="headerlink" title="8、流程控制语句"></a>8、流程控制语句</h3><p>顺序语句、条件语句、循环语句</p>
+<p>switch语句的取值byte、int、short、char。JDK5以后可以是枚举，JDK7以后可以是字符串</p>
 
       
     </div>
@@ -530,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/18/JAVA基础01-0/" rel="prev" title="JAVA基础01">
-                JAVA基础01 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/java基础02/" rel="prev" title="java基础02">
+                java基础02 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -611,7 +672,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -676,7 +737,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、jvm、jre、jdk"><span class="nav-number">1.</span> <span class="nav-text">1、jvm、jre、jdk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、jdk下载安装"><span class="nav-number">2.</span> <span class="nav-text">2、jdk下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、java语法"><span class="nav-number">3.</span> <span class="nav-text">3、java语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、关键字"><span class="nav-number">3.1.</span> <span class="nav-text">1、关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、标识符"><span class="nav-number">3.2.</span> <span class="nav-text">2、标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、注释"><span class="nav-number">3.3.</span> <span class="nav-text">3、注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、常量"><span class="nav-number">3.4.</span> <span class="nav-text">4、常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、进制"><span class="nav-number">3.4.1.</span> <span class="nav-text">1、进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、原码、反码、补码"><span class="nav-number">3.4.2.</span> <span class="nav-text">2、原码、反码、补码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、变量"><span class="nav-number">3.5.</span> <span class="nav-text">5、变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、数据类型"><span class="nav-number">3.6.</span> <span class="nav-text">6、数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、基本类型"><span class="nav-number">3.6.1.</span> <span class="nav-text">1、基本类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、使用变量注意事项"><span class="nav-number">3.6.2.</span> <span class="nav-text">2、使用变量注意事项</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、jvm、jre、jdk"><span class="nav-number">1.</span> <span class="nav-text">1、jvm、jre、jdk</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、jdk下载安装"><span class="nav-number">2.</span> <span class="nav-text">2、jdk下载安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、java语法"><span class="nav-number">3.</span> <span class="nav-text">3、java语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、关键字"><span class="nav-number">3.1.</span> <span class="nav-text">1、关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、标识符"><span class="nav-number">3.2.</span> <span class="nav-text">2、标识符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、注释"><span class="nav-number">3.3.</span> <span class="nav-text">3、注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、常量"><span class="nav-number">3.4.</span> <span class="nav-text">4、常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、进制"><span class="nav-number">3.4.1.</span> <span class="nav-text">1、进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、原码、反码、补码"><span class="nav-number">3.4.2.</span> <span class="nav-text">2、原码、反码、补码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、变量"><span class="nav-number">3.5.</span> <span class="nav-text">5、变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、数据类型"><span class="nav-number">3.6.</span> <span class="nav-text">6、数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、基本类型"><span class="nav-number">3.6.1.</span> <span class="nav-text">1、基本类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、使用变量注意事项"><span class="nav-number">3.6.2.</span> <span class="nav-text">2、使用变量注意事项</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、运算符"><span class="nav-number">3.7.</span> <span class="nav-text">7、运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、流程控制语句"><span class="nav-number">3.8.</span> <span class="nav-text">8、流程控制语句</span></a></li></ol></li></ol></div>
             
 
           </div>
