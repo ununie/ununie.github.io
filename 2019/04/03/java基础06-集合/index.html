@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java基础,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、集合数组长度固定，不能满足长度变换的要求，所以出现了集合。 集合和数组的区别  长度区别：数组长度固定，集合长度可变 存储内容不同：数组只能存储单一数据类型，集合可以存储不同数据类型 数组可以存储引用类型和基本类型，集合只能存储引用类型。  集合的体系结构 Collection ​    List ​        ArrayList ​        Vector ​        Link">
+<meta name="keywords" content="java基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础06-集合">
+<meta property="og:url" content="http://ununie.github.io/2019/04/03/java基础06-集合/index.html">
+<meta property="og:site_name" content="惶惶不可终日地思考">
+<meta property="og:description" content="1、集合数组长度固定，不能满足长度变换的要求，所以出现了集合。 集合和数组的区别  长度区别：数组长度固定，集合长度可变 存储内容不同：数组只能存储单一数据类型，集合可以存储不同数据类型 数组可以存储引用类型和基本类型，集合只能存储引用类型。  集合的体系结构 Collection ​    List ​        ArrayList ​        Vector ​        Link">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-03T15:30:00.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="java基础06-集合">
+<meta name="twitter:description" content="1、集合数组长度固定，不能满足长度变换的要求，所以出现了集合。 集合和数组的区别  长度区别：数组长度固定，集合长度可变 存储内容不同：数组只能存储单一数据类型，集合可以存储不同数据类型 数组可以存储引用类型和基本类型，集合只能存储引用类型。  集合的体系结构 Collection ​    List ​        ArrayList ​        Vector ​        Link">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://ununie.github.io/2019/04/03/java基础06-集合/">
+
+
+
+
+
+  <title>java基础06-集合 | 惶惶不可终日地思考</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">惶惶不可终日地思考</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ununie.github.io/2019/04/03/java基础06-集合/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ununie">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="惶惶不可终日地思考">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">java基础06-集合</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-03T23:29:20+08:00">
+                2019-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1、集合"><a href="#1、集合" class="headerlink" title="1、集合"></a>1、集合</h2><p>数组长度固定，不能满足长度变换的要求，所以出现了集合。</p>
+<p><strong>集合和数组的区别</strong></p>
+<ul>
+<li>长度区别：数组长度固定，集合长度可变</li>
+<li>存储内容不同：数组只能存储单一数据类型，集合可以存储不同数据类型</li>
+<li>数组可以存储引用类型和基本类型，集合只能存储引用类型。</li>
+</ul>
+<p><strong>集合的体系结构</strong></p>
+<p>Collection</p>
+<p>​    List</p>
+<p>​        ArrayList</p>
+<p>​        Vector</p>
+<p>​        LinkedList</p>
+<p>​    Set</p>
+<p>​        HashSet</p>
+<p>​        TreeSet</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//集合的方法</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeAll</span><span class="params">(Collection c)</span><span class="comment">//只要有跟c里面元素相同的就移除，返回true。如果没有移除则返回false，也就是说两个集合没有交集。</span></span></span><br><span class="line"><span class="function">   <span class="keyword">boolean</span> <span class="title">containAll</span><span class="params">(Collection c)</span><span class="comment">//必须包含所有的，才返回true</span></span></span><br><span class="line"><span class="function">   <span class="keyword">boolean</span> <span class="title">remainAll</span><span class="params">(Collection c)</span><span class="comment">//两个集合求交集，如果第一个集合元素发生变化就返回true</span></span></span><br><span class="line"><span class="function">       </span></span><br><span class="line"><span class="function">   <span class="title">toArray</span><span class="params">()</span></span>;<span class="comment">//集合转数组</span></span><br></pre></td></tr></table></figure>
+<p><strong>遍历</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//迭代器遍历</span></span><br><span class="line"><span class="comment">//迭代器是一个接口，具体实现是集合类的具体实现类的内部类形式体现。</span></span><br><span class="line">Iterator it = c.iterator();</span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">    c.next();<span class="comment">//每次循环只能使用一次next()方法</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//转化成数组遍历</span></span><br></pre></td></tr></table></figure>
+<h2 id="2、List"><a href="#2、List" class="headerlink" title="2、List"></a>2、List</h2><p>List是Collection的子接口</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//List特有功能</span></span><br><span class="line"><span class="comment">//添加,在指定位置添加</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> index, Object element)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取，通过索引获取</span></span><br><span class="line"><span class="function">Object <span class="title">get</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//删除，通过索引删除,返回被删除的元素</span></span><br><span class="line"><span class="function">Object <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line"><span class="function">Object <span class="title">set</span><span class="params">(<span class="keyword">int</span> index,Object element)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//列表迭代器,List特有的迭代器</span></span><br><span class="line"><span class="function">ListIterator <span class="title">listIterator</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*List特有遍历功能</span></span><br><span class="line"><span class="comment">size()和get()相结合</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">    Object o = list.get(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>并发修改异常</strong></p>
+<p>迭代器迭代集合，集合修改元素会出现并发修改异常</p>
+<p>解决方案：</p>
+<p>迭代器遍历，迭代器修改。使用ListIterator迭代器，元素添加在迭代器修改的位置。</p>
+<p>集合遍历，集合修改size()和get()，元素添加在末尾。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="comment">//获取列表迭代器</span></span><br><span class="line">ListIterator listIterator = list.listIterator();</span><br><span class="line"><span class="keyword">while</span>(listIterator.hasNext())&#123;</span><br><span class="line">    String s = (String) listIterator.next();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*ListIterator方法</span></span><br><span class="line"><span class="comment">    void add(Object obj);</span></span><br><span class="line"><span class="comment">    boolean hasNext();</span></span><br><span class="line"><span class="comment">    boolean hasPrevious();</span></span><br><span class="line"><span class="comment">    Object next();</span></span><br><span class="line"><span class="comment">    int nextIndex();</span></span><br><span class="line"><span class="comment">    Object previous();</span></span><br><span class="line"><span class="comment">    int previousIndex();</span></span><br><span class="line"><span class="comment">    void remove();</span></span><br><span class="line"><span class="comment">    set(Object obj);</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>常见的数据结构</strong></p>
+<p>栈：先进后出</p>
+<p>队列：先进先出</p>
+<p>数组：查询快，增删慢</p>
+<p>链表：查询慢增删快</p>
+<p><strong>List子类特点</strong></p>
+<p>ArrayList：底层是数组，查询快，增删慢。线程不安全，效率高</p>
+<p>Vector：底层是数组，查询快，增删慢。线程安全，效率低</p>
+<p>​    <strong>即使需要安全考虑也不使用Vector</strong></p>
+<p>LinkedList：底层是链表，查询慢，增删快。线程不安全，效率高</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Vector特有功能</span></span><br><span class="line">	addElement()<span class="comment">//相当于add()</span></span><br><span class="line">    elementAt(<span class="keyword">int</span> index)<span class="comment">//相当于get()</span></span><br><span class="line">    elements()<span class="comment">//相当于iterator()</span></span><br><span class="line"><span class="comment">//LinkedList特有功能</span></span><br><span class="line">    addFirst();</span><br><span class="line">	addLast();</span><br><span class="line">	removeFirst();</span><br><span class="line">	removeLast();</span><br><span class="line">	getFirst();</span><br><span class="line">	getLast();</span><br></pre></td></tr></table></figure>
+<h2 id="3、泛型"><a href="#3、泛型" class="headerlink" title="3、泛型"></a>3、泛型</h2><p><strong>泛型的好处</strong></p>
+<p>把运行期间的问题提到了编译期间</p>
+<p>避免了强制类型转换</p>
+<p>优化程序设计，避免警告线</p>
+<p><strong>泛型分类</strong></p>
+<p>泛型类</p>
+<p>public <t> class Student{}</t></p>
+<p>泛型方法</p>
+<p>public <t> void fun{T t1}</t></p>
+<p>泛型接口</p>
+<p>public <t> interface Study{}</t></p>
+<p>泛型高级通配符</p>
+<p>? 任意类</p>
+<p>? Extends E    E及其子类</p>
+<p>? Super E    E及其父类</p>
+<h2 id="4、JDK5新特性"><a href="#4、JDK5新特性" class="headerlink" title="4、JDK5新特性"></a>4、JDK5新特性</h2><p><strong>增强for</strong></p>
+<p>是for循环的一种，为了替代迭代器</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Integer i:list)&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>静态导入</strong></p>
+<p>导入级别到具体方法。导入的方法必须是静态的。</p>
+<p><strong>可变参数</strong></p>
+<p>可变参数本质是用一个数组来接受参数的。</p>
+<p>如果有可变参数，可变参数必须放在最后</p>
+<p>Arrays.asList()方法，将数组转成集合。注意这个集合的长度不能改变，因为其本质还是数组，以内部类的形式存在。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">List list = Arrays.asList(<span class="string">"可变参数"</span>);<span class="comment">//把数组转成集合</span></span><br><span class="line"><span class="comment">//本质还是一个数组，长度不可变所以不能增删，可以修改元素值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//集合转数组,toArray()方法</span></span><br></pre></td></tr></table></figure>
+<h2 id="5、Set"><a href="#5、Set" class="headerlink" title="5、Set"></a>5、Set</h2><p>不包含重复元素，无序集合。它有自己的存储顺序</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Set集合的add()方法底层依赖对象的hashCode()和equals()方法。</span></span><br><span class="line"><span class="comment">//首先比较哈希值，如果相同比较equals()方法，相同则不添加返回老的元素；</span></span><br></pre></td></tr></table></figure>
+<h3 id="1、HashSet"><a href="#1、HashSet" class="headerlink" title="1、HashSet"></a>1、HashSet</h3><p>底层是HashMap</p>
+<h3 id="2、LinkedHashSet"><a href="#2、LinkedHashSet" class="headerlink" title="2、LinkedHashSet"></a>2、LinkedHashSet</h3><p>具有可预知迭代顺序的Set接口实现。</p>
+<p>底层数据结构由哈希表和链表组成。哈希表保证唯一，链表保证有序。</p>
+<h3 id="3、TreeSet"><a href="#3、TreeSet" class="headerlink" title="3、TreeSet"></a>3、TreeSet</h3><p>底层是TreeMap。使用元素自然顺序对元素进行排序，或根据创建set时提供的Comparator进行排序，具体取决于构造方法。</p>
+<p>TreeSet底层是二叉树结构（红黑树，是一种自平衡二叉树）</p>
+<p><strong>特点：</strong>排序、唯一</p>
+<p><strong>自然排序：进行自然排序的类实现了Comparable接口。调用Comparable接口的compareTo()方法进行比较后排序。</strong></p>
+<p><strong>比较器排序：让集合的构造方法接受一个比较器Comparator接口的实现类对象，一般是使用匿名内部类的方式重写compareTo()方法</strong></p>
+<p>根据比较的返回值是否为0来决定元素的唯一性。</p>
+<h2 id="6、Map"><a href="#6、Map" class="headerlink" title="6、Map"></a>6、Map</h2><h3 id="1、HashMap跟Hashtable的不同"><a href="#1、HashMap跟Hashtable的不同" class="headerlink" title="1、HashMap跟Hashtable的不同"></a>1、HashMap跟Hashtable的不同</h3><p>Hashtable不允许使用null键null值，是同步的，效率低</p>
+<p>HashMap允许使用null键null值，不同步的，效率高</p>
+<h2 id="7、Collections工具类"><a href="#7、Collections工具类" class="headerlink" title="7、Collections工具类"></a>7、Collections工具类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(List list)</span></span>;<span class="comment">//排序，默认自然排序</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(List list, key)</span></span>;<span class="comment">//二分查找</span></span><br><span class="line"></span><br><span class="line">max();<span class="comment">//最大值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reverse</span><span class="params">(List list)</span></span>;<span class="comment">//反转</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">shuffle</span><span class="params">(List list)</span></span>;<span class="comment">//随机置换</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="ununie 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubao.jpg" alt="ununie 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java基础/" rel="tag"># java基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/02/java基础05-多线程/" rel="next" title="java基础05-多线程">
+                <i class="fa fa-chevron-left"></i> java基础05-多线程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/avatar.png" alt="ununie">
+            
+              <p class="site-author-name" itemprop="name">ununie</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="undefined" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-globe"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、集合"><span class="nav-number">1.</span> <span class="nav-text">1、集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、List"><span class="nav-number">2.</span> <span class="nav-text">2、List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、泛型"><span class="nav-number">3.</span> <span class="nav-text">3、泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、JDK5新特性"><span class="nav-number">4.</span> <span class="nav-text">4、JDK5新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、Set"><span class="nav-number">5.</span> <span class="nav-text">5、Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、HashSet"><span class="nav-number">5.1.</span> <span class="nav-text">1、HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、LinkedHashSet"><span class="nav-number">5.2.</span> <span class="nav-text">2、LinkedHashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、TreeSet"><span class="nav-number">5.3.</span> <span class="nav-text">3、TreeSet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、Map"><span class="nav-number">6.</span> <span class="nav-text">6、Map</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、HashMap跟Hashtable的不同"><span class="nav-number">6.1.</span> <span class="nav-text">1、HashMap跟Hashtable的不同</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Collections工具类"><span class="nav-number">7.</span> <span class="nav-text">7、Collections工具类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ununie</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
